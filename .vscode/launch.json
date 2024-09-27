@@ -30,6 +30,19 @@
         },
 
         {
+            "name": "one-to-ten Project",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-one-to-ten",
+            "program": "${workspaceFolder}/sandbox/one-to-ten/bin/Debug/net8.0/one-to-ten.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/one-to-ten",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        {
             "name": "C# Prep 1",
             "type": "coreclr",
             "request": "launch",
