@@ -27,6 +27,8 @@ class Program
             if (selection == 4)
             {
                 _journal.SaveToFile();
+
+                // Exceeding requirements. The user can set an author for the journal when saving to a file. The author will be properly displayed when "Display" is selected in the main menu.
             }
         } while (selection != 5);
     }
