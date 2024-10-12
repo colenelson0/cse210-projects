@@ -1,0 +1,38 @@
+Program class
+
+Attributes:
+_journal - the journal being used by the user
+
+Methods:
+ShowMenu - shows the lists of possible actions for the user
+
+Journal class
+
+Attributes:
+_entries - the entries in the journal
+
+Methods:
+AddEntry - prompts the user to input an entry for the journal
+DisplayEntries - displays the date, prompt, and response of each entry in the journal
+SaveToFile - saves the journal entries to a file
+LoadFile - load journal entries from file
+
+
+Entry class
+
+Attributes:
+_date - the date the entry was written
+_prompt - the question that the user is prompted to respond to
+_response - the response to the prompt from the user
+
+Methods:
+DisplayEntry - displays the date, prompt, and response of the entry
+
+
+PromptGenerator class
+
+Attributes:
+_sourceFile - the file containing the list of prompts
+
+Methods:
+GeneratePrompt - generates the prompt to be used for the journal entry

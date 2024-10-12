@@ -1,0 +1,5 @@
+What is your favorite color?
+What is your favorite class?
+What is your name?
+What is your purpose?
+What is the name of your favorite pet?
