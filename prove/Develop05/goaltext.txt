@@ -1,0 +1,5 @@
+1000
+SimpleGoal:Goal A,A,500,True
+EternalGoal:Goal B,B,500
+Reward:Soda,Drink soda,999,True
+Reward:Lazy guy reward,You get it for nothing,100,True
