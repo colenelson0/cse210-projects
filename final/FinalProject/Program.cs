@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         const int START_LIVES = 3;
-        const int TOTAL_DAYS = 1;
+        const int TOTAL_DAYS = 3;
         const int STARTING_DAY = 1;
         const int CLOCK_TICKS = 60;
         const int GAME_MINS = 4;

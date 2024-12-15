@@ -161,6 +161,7 @@ class Game
             _day++;
         }
         // Final results of game
+        Console.Clear();
         DisplayGameEnd(yourName);
     }
     private void GameDay()
@@ -352,9 +353,9 @@ class Game
                 default:
                     break;
             }
-            if (_gameTime == _gameDuration && _orders.Count == 0)
+            if (_orders.Count == 0)
             {
-                // last call && nothing to do - youre free to go
+                // nothing to do - youre free to go
                 _stop = true;
             }
             Console.Clear();
@@ -625,10 +626,10 @@ class Game
     }
     private void StartDayTimer()
     {
-        while (_gameTime < _gameDuration && !_failure)
+        while (_gameTime < _gameDuration && !_stop && !_failure)
         {
             int w = 0;
-            while (w < _waitTime && !_failure)
+            while (w < _waitTime && !_stop && !_failure)
             {
                 Thread.Sleep(1000);
                 w++;
