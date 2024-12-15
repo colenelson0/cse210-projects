@@ -1,0 +1,4 @@
+cheese,cinnamon,garlic,plain,pretzel
+buffalo,cajun,ghost pepper,honey bbq,jalapeno lime,koolaid
+coke,diet coke,dr. pepper,mtn dew,pepsi,root beer,sprite,sunkist,water
+blackberry,coconut,grape,orange,pineapple,strawberry,watermelon

@@ -9,9 +9,11 @@ abstract class Item
     public Item()
     {
         _phase = "empty"; // Item needs to be composed
+
     }
 
     // Methods
+    public abstract string GetStringForMenu();
     public string GetCategory()
     {
         return _category;
@@ -38,5 +40,19 @@ abstract class Item
     {
         _price = price;
     }
+    public abstract void CalculatePrice();
     public abstract void Compose();
+    public string CapitalizeWord(string word)
+    {
+        // Convert the word into a character array
+        char[] charArr = word.ToCharArray();
+        // Get the capitalized version of the first letter of the word
+        char upper = word.ToUpper()[0];
+        // Change the first letter in the character array to the capital
+        charArr[0] = upper;
+        // Create a new string from the character array
+        string newWord = new(charArr);
+
+        return newWord;
+    }
 }

@@ -4,21 +4,27 @@ abstract class WarmItem : Item
     private int _bakeTime;
 
     // Constructors
-    public WarmItem(int bakeTime)
-    {
-        _bakeTime = bakeTime;
-    }
+    public WarmItem() {}
 
     // Methods
-    public int GetBakeTime()
+    public abstract void CalculateBakeTime();
+    public void SetBakeTime(int bakeTime)
     {
-        return _bakeTime;
+        _bakeTime = bakeTime * 1000;
     }
     public void Bake()
     {
         SetPhase("baking");
-        // wait the bake time
 
+        // wait the bake time
+        Thread b = new Thread(ThreadBake);
+        b.Start();
+    }
+    public void ThreadBake()
+    {
+        Thread.Sleep(_bakeTime);
+
+        // done baking
         SetPhase("ready");
     }
 }

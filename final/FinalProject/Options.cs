@@ -7,6 +7,7 @@ class Options
     private List<string> _wingSauces;
     private List<string> _sodaBases;
     private List<string> _sodaFlavors;
+    private List<string> _pizzaToppings;
 
     // Constructors
     public Options()
@@ -17,58 +18,81 @@ class Options
         _wingSauces = new();
         _sodaBases = new();
         _sodaFlavors = new();
+        _pizzaToppings = new();
     }
 
     // Methods
+    public string GetToppingAtIndex(int ind)
+    {
+        return _pizzaToppings[ind];
+    }
     public List<string> GetRandomCustomers(int number)
     {
         // this one needs to be returned as a list to avoid the chance of getting the same customer twice in one day
         // number : the number of random customers needed when calling the function
+        Random rng = new Random();
+        List<string> shuffle = _customers;
+        shuffle = shuffle.OrderBy(x => Random.Shared.Next()).ToList();
 
-        // temp
-        List<string> customerList = new();
-        return customerList;
+        List<string> returnList = new();
+        for (int i = 0; i < number; i++)
+        {
+            returnList.Add(shuffle[i]);
+        }
+
+        return returnList;
     }
     public PizzaType GetRandomPizzaType()
     {
         // pizza types can be repeated; only one is necessary at a time
+        Random rng = new Random();
+        List<PizzaType> shuffle = _pizzaTypes;
+        shuffle = shuffle.OrderBy(x => Random.Shared.Next()).ToList();
 
-        // temp
-        PizzaType pizzaType = new("typeName");
-        return pizzaType;
+        return shuffle[0];
     }
     public string GetRandomBreadSeasoning()
     {
         // bread seasonings can be repeated; only one is necessary at a time
+        Random rng = new Random();
+        List<string> shuffle = _breadSeasonings;
+        shuffle = shuffle.OrderBy(x => Random.Shared.Next()).ToList();
 
-        // temp
-        string breadSeasoning = "breadSeasoning";
-        return breadSeasoning;
+        return shuffle[0];
     }
     public string GetRandomWingSauce()
     {
         // wing sauces can be repeated; only one is necessary at a time
+        Random rng = new Random();
+        List<string> shuffle = _wingSauces;
+        shuffle = shuffle.OrderBy(x => Random.Shared.Next()).ToList();
 
-        // temp
-        string wingSauce = "wingSauce";
-        return wingSauce;
+        return shuffle[0];
     }
     public string GetRandomSodaBase()
     {
         // soda bases can be repeated; only one is necessary at a time
+        Random rng = new Random();
+        List<string> shuffle = _sodaBases;
+        shuffle = shuffle.OrderBy(x => Random.Shared.Next()).ToList();
 
-        // temp
-        string sodaBase = "sodaBase";
-        return sodaBase;
+        return shuffle[0];
     }
     public List<string> GetRandomSodaFlavors(int number)
     {
         // this one needs to be returned as a list to avoid the chance of getting multiple of the same flavor in one soda
         // number : the number of random soda flavors needed when calling the function
+        Random rng = new Random();
+        List<string> shuffle = _sodaFlavors;
+        shuffle = shuffle.OrderBy(x => Random.Shared.Next()).ToList();
 
-        // temp
-        List<string> sodaFlavors = new();
-        return sodaFlavors;
+        List<string> returnList = new();
+        for (int i = 0; i < number; i++)
+        {
+            returnList.Add(shuffle[i]);
+        }
+
+        return returnList;
     }
     public void AddCustomer(string customer)
     {
@@ -93,5 +117,9 @@ class Options
     public void AddSodaFlavor(string sodaFlavor)
     {
         _sodaFlavors.Add(sodaFlavor);
+    }
+    public void AddPizzaTopping(string pizzaTopping)
+    {
+        _pizzaToppings.Add(pizzaTopping);
     }
 }
